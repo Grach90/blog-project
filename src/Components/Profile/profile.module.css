@@ -1,0 +1,32 @@
+.mainDiv {
+    border: 1px solid #0713f366;
+    padding-bottom: 20px;
+    width: 85%;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0px 10px 21px 14px #2370e1b8;
+}
+
+.container {
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin: 30px auto;
+    width: 400px;
+    border: 1px solid #25262940;
+    border-radius: 20px;
+}
+
+.formControl {
+    margin-bottom: 15px !important;
+}
+
+.container button {
+    margin-top: 15px;
+}
+
+.info div {
+    font-size: 20px;
+    margin-bottom: 5px;
+}

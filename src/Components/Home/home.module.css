@@ -1,0 +1,36 @@
+.article {
+    width: 80%;
+    height: 150px;
+    contain: content;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    border: 2px solid #cbc59ff2;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    font-family: cursive;
+}
+
+.article:hover {
+    background-color: gold;
+}
+
+.mainDiv {
+    border: 1px solid #0713f366;
+    padding-bottom: 20px;
+    width: 85%;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0px 10px 21px 14px #2370e1b8;
+}
+
+.mainDiv h1 {
+    font-family: cursive;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
