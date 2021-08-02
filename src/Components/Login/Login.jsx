@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
 import {signIn} from '../../Redux/actions';
+import PropTypes from 'prop-types';
 
 
 const Login = ({handleChange, formData, handleSubmit, resetLoginState, history}) => {
@@ -57,6 +58,13 @@ const mapDispatchToProps = (dispatch) => {
     }),
     resetLoginState: () => dispatch({type: 'RESET_LOGIN_STATE'})
   }
+}
+
+Login.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  formData: PropTypes.object, 
+  handleSubmit: PropTypes.func.isRequired,
+  resetLoginState: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

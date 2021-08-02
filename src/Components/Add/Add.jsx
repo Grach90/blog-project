@@ -9,6 +9,7 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import {connect} from 'react-redux';
 import {addArticle} from '../../Redux/actions';
 import {useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 const Add = ({formData, handleSubmit, handleChange, user, history, resetState}) => {
 
@@ -81,6 +82,14 @@ const mapDispatchToProps = (dispatch) => {
     }),
     resetState: () => dispatch({type: 'RESET_ADD'})
   }
+}
+
+Add.propTypes = {
+  formData: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  user: PropTypes.object,
+  resetState: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Add);

@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import Spiner from '../Spiner/Spiner';
 import {editUserInfo} from '../../Redux/actions';
 import { getUserInfo } from '../../Helpers/auth';
+import PropTypes from 'prop-types';
 
 const Profile = ({ 
   userInfo, 
@@ -119,6 +120,16 @@ const mapDispatchToProps = (dispatch) => {
       editUserInfo(formData, history, dispatch);
     })
   }
+}
+
+Profile.propTypes = {
+  userInfo: PropTypes.object, 
+  formData: PropTypes.object, 
+  setUserInfo: PropTypes.func.isRequired, 
+  handleChange: PropTypes.func.isRequired,
+  hide: PropTypes.bool.isRequired, 
+  handleHide: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

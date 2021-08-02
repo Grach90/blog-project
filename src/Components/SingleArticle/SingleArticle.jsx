@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {useEffect} from 'react';
 import {getSingleArticle} from '../../Redux/actions';
 import Spiner from '../Spiner/Spiner';
+import PropTypes from 'prop-types';
 
 const SingleArticle = ({getArticle, history, singleArticle}) => {
 
@@ -48,6 +49,11 @@ const mapDispatchToProps = (dispatch) => {
       getSingleArticle(id, dispatch);
     })
   }
+}
+
+SingleArticle.propTypes = {
+  getArticle: PropTypes.func.isRequired, 
+  singleArticle: PropTypes.object
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleArticle);

@@ -5,8 +5,7 @@ import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
 import {registerThunk} from '../../Redux/actions';
 import Spiner from '../Spiner/Spiner';
-
-
+import PropTypes from 'prop-types';
 
 const Register = ({formData, handleChange, resetState, register, loading, history}) => {
 
@@ -104,6 +103,14 @@ const mapDispatchToProps = (dispatch) => {
       registerThunk(dispatch, data, history);
     })
   }
+}
+
+Register.propTypes = {
+  formData: PropTypes.object,
+  handleChange: PropTypes.func.isRequired,
+  resetState: PropTypes.func.isRequired, 
+  register: PropTypes.func.isRequired, 
+  loading: PropTypes.bool.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

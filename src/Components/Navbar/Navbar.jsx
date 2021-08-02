@@ -16,6 +16,7 @@ import {connect} from 'react-redux';
 import {signout} from '../../Redux/actions';
 import {getUserInfo} from '../../Helpers/auth';
 import {searchArticle} from '../../Redux/actions';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -171,6 +172,13 @@ const mapDispatchToProps = (dispatch) => {
       dispatch({ type: 'USER_INFO', userInfo });
     }
   }
+}
+
+Navbar.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired, 
+  logout: PropTypes.func.isRequired,
+  user: PropTypes.object,
+  getUser: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

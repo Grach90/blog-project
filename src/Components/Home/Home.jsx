@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {getArticlesThunk} from '../../Redux/actions';
 import Article from '../Article/Article';
 import Spiner from '../Spiner/Spiner';
+import PropTypes from 'prop-types';
 
 const Home = ({getArticles, articles, history}) => {
 
@@ -54,6 +55,11 @@ const mapDispatchToProps = (dispatch) => {
       getArticlesThunk(dispatch);
     })
   }
+}
+
+Home.propTypes = {
+  getArticles: PropTypes.func.isRequired,
+  articles: PropTypes.array.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

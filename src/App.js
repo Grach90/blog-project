@@ -13,6 +13,7 @@ import SingleArticle from './Components/SingleArticle/SingleArticle';
 import { ToastContainer, toast } from 'react-toastify';
 import Profile from './Components/Profile/profile';
 import Spiner from './Components/Spiner/Spiner';
+import PropTypes from 'prop-types';
 
 function App(props) {
   const {errorMessage, successMessage, loading} = props;
@@ -88,6 +89,12 @@ const mapStateToProps = (state) => {
   return {
     ...state.globalState
   }
+}
+
+App.propTypes = {
+  errorMessage: PropTypes.string,
+  successMessage: PropTypes.string,
+  loading: PropTypes.bool.isRequired
 }
 
 export default connect(mapStateToProps, null)(App);

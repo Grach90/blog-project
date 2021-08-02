@@ -1,4 +1,5 @@
 import styles from './article.module.css';
+import PropTypes from 'prop-types';
 
 
 const Article = ({article}) => {
@@ -15,4 +16,7 @@ const Article = ({article}) => {
   )
 }
 
+Article.propTypes = {
+  article: PropTypes.object.isRequired
+}
 export default Article;

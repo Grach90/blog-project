@@ -37,7 +37,6 @@ export function signIn(formData, dispatch, history) {
             saveToken(data)
             history.push('/');
             dispatch({ type: 'LOGIN', userInfo });
-
         })
         .catch(err => dispatch({ type: 'ERROR', error: err.msesage }))
         .finally(() => dispatch({ type: 'UNSET_LOADING' }));
